@@ -8,7 +8,7 @@ export default function Projects() {
             title: "React Portfolio ",
             description: "A personal portfolio website built with React, TypeScript, and Tailwind CSS to showcase projects, skills, and experience with a clean, responsive design.",
             technologies: ["React", "Typescript", "Tailwind CSS"],
-            githubLink: "",
+            githubLink: "https://github.com/shrutia15/PortfolioApplication.git",
         },
 
         {

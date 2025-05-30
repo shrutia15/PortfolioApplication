@@ -7,18 +7,18 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between">
                 {/* Left Section */}
                 <div className="text-center md:text-left mb-4 md:mb-0">
-                    <h2 className="text-lg font-semibold">© {new Date().getFullYear()} Shruti | All Rights Reserved</h2>
+                    <h2 className="text-lg font-semibold">© {new Date().getFullYear()} Shruti Awate | All Rights Reserved</h2>
                 </div>
 
                 {/* Social Icons */}
                 <div className="flex space-x-6">
-                    <a href="mailto:your.email@example.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
+                    <a href="mailto:shruti.awate1550@gmail.com" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
                         <Mail className="w-5 h-5" />
                     </a>
                     <a href="https://github.com/shrutia15" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
                         <Github className="w-5 h-5" />
                     </a>
-                    <a href="https://www.linkedin.com/in/your-profile" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
+                    <a href="https://www.linkedin.com/in/shruti-awate1505/" target="_blank" rel="noopener noreferrer" className="hover:text-gray-300 transition">
                         <Linkedin className="w-5 h-5" />
                     </a>
                 </div>
