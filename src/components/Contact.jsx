@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
 
 export default function Contact() {
     const [formData, setFormData] = useState({
@@ -17,10 +18,21 @@ export default function Contact() {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        const mailtoLink = `mailto:shruti.awate1550@gmail.com?subject=Portfolio Contact: ${formData.name}&body=Name: ${formData.name}%0D%0AEmail: ${formData.email}%0D%0AMessage: ${formData.message}`;
-        window.location.href = mailtoLink;
 
-        setFormData({ name: "", email: "", message: "" });
+        emailjs.send(
+            "service_76dj2sh",   // e.g., "service_123xyz"
+            "template_jz581vu",  // e.g., "template_abc456"
+            formData,
+            "b0m6o113gA8BnZduH"    // e.g., "9YzabcEFG123456"
+        )
+        .then(() => {
+            alert("Message sent successfully!");
+            setFormData({ name: "", email: "", message: "" });
+        })
+        .catch((error) => {
+            console.error("Email sending failed:", error);
+            alert("Failed to send message. Please try again.");
+        });
     };
 
     return (
@@ -37,10 +49,12 @@ export default function Contact() {
 
                 {/* Contact Form */}
                 <div className="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-lg">
-                    <form onSubmit={handleSubmit} className="space-y-6" >
+                    <form onSubmit={handleSubmit} className="space-y-6">
                         <div>
-                            <label htmlFor="name"
-                                className="block text-sm text-gray-700 font-medium mb-1">
+                            <label
+                                htmlFor="name"
+                                className="block text-sm text-gray-700 font-medium mb-1"
+                            >
                                 Name:
                             </label>
                             <input
@@ -56,8 +70,10 @@ export default function Contact() {
                         </div>
 
                         <div>
-                            <label htmlFor="email"
-                                className="block text-sm text-gray-700 font-medium mb-1">
+                            <label
+                                htmlFor="email"
+                                className="block text-sm text-gray-700 font-medium mb-1"
+                            >
                                 Email:
                             </label>
                             <input
@@ -73,8 +89,10 @@ export default function Contact() {
                         </div>
 
                         <div>
-                            <label htmlFor="text"
-                                className="block text-sm text-gray-700 font-medium mb-1">
+                            <label
+                                htmlFor="message"
+                                className="block text-sm text-gray-700 font-medium mb-1"
+                            >
                                 Message:
                             </label>
                             <input
@@ -82,7 +100,6 @@ export default function Contact() {
                                 id="message"
                                 name="message"
                                 placeholder="Message"
-                                rows="4"
                                 value={formData.message}
                                 onChange={handleChange}
                                 required
@@ -90,14 +107,13 @@ export default function Contact() {
                             />
                         </div>
 
-                        <button type="submit" 
-                        className="w-full px-6 py-3 bg-gradient-to-r from-indigo-700 to-purple-700 text-white font-semibold ">
+                        <button
+                            type="submit"
+                            className="w-full px-6 py-3 bg-gradient-to-r from-indigo-700 to-purple-700 text-white font-semibold"
+                        >
                             Submit
-
                         </button>
-
                     </form>
-
                 </div>
             </div>
         </div>
