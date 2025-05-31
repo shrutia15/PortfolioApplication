@@ -1,14 +1,38 @@
-// import React from "react";
 import profileimg from "../assets/profilepic.jpg";
+import {
+  FaDocker,
+  FaReact,
+  FaJava,
+  FaDatabase,
+  FaGitAlt,
+  FaCogs,
+  FaCode,
+} from "react-icons/fa";
+import {
+  SiSpringboot,
+  SiJenkins,
+  SiKubernetes,
+  SiTailwindcss,
+  SiDotnet,
+} from "react-icons/si";
+
+import { FaGraduationCap, FaSchool } from "react-icons/fa";
+// import { SiDotnet } from "react-icons/si";  // you already imported SiDotnet, so reuse for diploma icon
 
 export default function About() {
   return (
-    <div className="min-h-screen w-full bg-gradient-to-b from-white to-gray-50">
+    <div
+      id="about"
+      className="min-h-screen w-full bg-gradient-to-b from-white to-gray-50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-7 lg:px-8 py-24">
         {/* Hero Section */}
         <div className="text-center space-y-8 mb-16">
-          <h1 className="text-5xl font-bold text-indigo-700">
-            Hi, I am Shruti
+          <h1 className="text-5xl md:text-6xl font-extrabold text-center leading-snug bg-gradient-to-r from-indigo-700 to-purple-600 text-transparent bg-clip-text animate-fade-in-up">
+            Hi, I'm{" "}
+            <span className="decoration-4 underline-offset-4">
+              Shruti Awate
+            </span>
           </h1>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -16,6 +40,7 @@ export default function About() {
             foundation in full-stack development, DevOps, and cloud computing.
           </p>
         </div>
+
         {/* Profile Image */}
         <div className="relative flex items-center justify-center mb-16">
           <div className="absolute insert-0 bg-gradient-to-r from-indigo-600 via purple-600 to-teal-600 rounded-full blur-lg opacity-20 w-48 h-48"></div>
@@ -26,165 +51,157 @@ export default function About() {
           />
         </div>
 
-        {/* Educational background
-        <div className="bg-white shadow-md mb-16 p-6 rounded-md max-w-4xl mx-auto">
-          <h1 className="text-3xl font-semibold mb-10 text-center">
-            Education Journey
-          </h1>
+        {/* Academic Timeline */}
+        <div className="bg-white shadow-lg p-8 rounded-xl max-w-5xl mx-auto mb-16">
+          <h2 className="text-4xl font-bold text-center mb-10 bg-gradient-to-r from-indigo-700 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+            Academic Timeline
+          </h2>
 
-          <div className="space-y-6 text-left">
-            <p className="text-lg text-gray-600">
-              I hold a B.E. degree from Dr. D.Y. Patil Institute of Technology
-              and a PG Diploma in Advanced Computing (CDAC) from Sunbeam
-              InfoTech. My academic background is complemented by hands-on
-              experience with technologies such as React, Spring Boot, Java,
-              MySQL, Docker, Kubernetes, and Jenkins.
-            </p>
+          <div className="relative border-l-4 border-indigo-600 pl-12 space-y-12">
+            {[
+              {
+                year: "2025",
+                title: "PG Diploma in Advanced Computing",
+                details:
+                  "Sunbeam InfoTech, CDAC ACTS, Pune\nGrade: CCEE - 67.2%",
+                icon: <FaGraduationCap className="text-indigo-600 w-6 h-6" />,
+              },
+              {
+                year: "2024",
+                title: "B.E. in Engineering",
+                details:
+                  "Dr. D.Y. Patil Institute of Technology, SPPU\nAggregate CGPA: 8.85\nYear-wise: 9.28 / 8.69 / 8.01 / 9.20",
+                icon: <FaGraduationCap className="text-indigo-600 w-6 h-6" />,
+              },
+              {
+                year: "2020",
+                title: "HSC (12th Grade)",
+                details: "Novel International Jr. College\nPercentage: 75.7%",
+                icon: <FaSchool className="text-indigo-600 w-6 h-6" />,
+              },
+              {
+                year: "2018",
+                title: "SSC (10th Grade)",
+                details: "Blossom Public School, CBSE Board\nPercentage: 81.7%",
+                icon: <FaSchool className="text-indigo-600 w-6 h-6" />,
+              },
+            ].map((item, index) => (
+              <div key={index} className="relative group">
+                {/* Circle with icon */}
+                <div className="absolute -left-10 top-2 flex items-center justify-center w-10 h-10 bg-indigo-600 rounded-full text-white shadow-lg group-hover:bg-indigo-800 transition-colors duration-300">
+                  {item.icon}
+                </div>
 
-            <p className="text-lg text-gray-600">
-              I have worked on real-world projects like a Courier Service
-              Management System and a Deep Learning-based 5G mmWave Pathloss
-              Prediction system. These projects strengthened my skills in
-              frontend/backend development, API integration, and secure software
-              design.
-            </p>
+                {/* Year badge */}
+                <div className="absolute -left-28 top-0 bg-indigo-100 text-indigo-800 font-semibold rounded-full px-3 py-1 text-sm shadow-md select-none">
+                  {item.year}
+                </div>
+
+                {/* Card */}
+                <div className="bg-indigo-50 p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 cursor-default">
+                  <h3 className="text-xl font-semibold mb-2 text-indigo-700">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-700 whitespace-pre-line leading-relaxed">
+                    {item.details}
+                  </p>
+                </div>
+              </div>
+            ))}
           </div>
-        </div> */}
+        </div>
 
-        {/* Education Flowchart */}
-<div className="bg-white shadow-md p-6 rounded-md max-w-5xl mx-auto mb-16">
-  <h1 className="text-3xl font-semibold mb-10 text-center text-indigo-700">
-    Academic Timeline
-  </h1>
+        {/* Skills Highlights with Icons */}
+        <div className="bg-white shadow-lg p-8 rounded-xl max-w-5xl mx-auto mb-16">
+          <h2 className="text-4xl font-bold text-center mb-10 bg-gradient-to-r from-indigo-700 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+            Roles I’m Ready to Excel In
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            {/* DevOps Engineer */}
+            <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
+              <h1 className="flex items-center text-2xl font-semibold mb-6 text-indigo-600 gap-2">
+                <FaCogs /> DevOps Engineer
+              </h1>
+              <p className="text-lg text-gray-600">
+                Proficient in <FaDocker className="inline" /> Docker for
+                containerization, <SiKubernetes className="inline" /> Kubernetes
+                for orchestration, <SiJenkins className="inline" /> Jenkins for
+                CI/CD pipelines, <FaGitAlt className="inline" /> Git for version
+                control, and Helm. Experienced in Prometheus & Grafana.
+              </p>
+            </div>
 
-  <div className="relative border-l-4 border-indigo-600 pl-6 space-y-10">
-    <div className="relative">
-      <div className="absolute -left-3 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white"></div>
-      <h3 className="text-xl px-4 font-semibold text-indigo-800">2025 - PG Diploma in Advanced Computing</h3>
-      <p className="text-gray-700">
-        Sunbeam InfoTech, CDAC ACTS, Pune<br />
-        Grade: CCEE - 67.2%
-      </p>
-    </div>
+            {/* Frontend Developer */}
+            <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
+              <h1 className="flex items-center text-2xl font-semibold mb-6 text-indigo-600 gap-2">
+                <FaReact /> Frontend Developer
+              </h1>
+              <p className="text-lg text-gray-600">
+                Skilled in React.js, <SiTailwindcss className="inline" />{" "}
+                Tailwind CSS, TypeScript, Redux, and REST APIs. Familiar with
+                Vite, Webpack, Jest, and React Testing Library.
+              </p>
+            </div>
 
-    <div className="relative">
-      <div className="absolute -left-3 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white"></div>
-      <h3 className="text-xl px-4 font-semibold text-indigo-800">2024 - B.E. in Engineering</h3>
-      <p className="text-gray-700">
-        Dr. D.Y. Patil Institute of Technology, SPPU<br />
-        Aggregate CGPA: 8.85<br />
-        Year-wise: 9.28 / 8.69 / 8.01 / 9.20
-      </p>
-    </div>
+            {/* Backend Developer */}
+            <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
+              <h1 className="flex items-center text-2xl font-semibold mb-6 text-indigo-600 gap-2">
+                <SiSpringboot /> Backend Developer
+              </h1>
+              <p className="text-lg text-gray-600">
+                Experienced with Spring Boot for APIs,{" "}
+                <FaDatabase className="inline" /> MySQL/PostgreSQL, and API
+                testing using Postman. Knowledge in JWT, OAuth2, microservices,
+                and containerization.
+              </p>
+            </div>
 
-    <div className="relative">
-      <div className="absolute -left-3 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white"></div>
-      <h3 className="text-xl px-4 font-semibold text-indigo-800">2020 - HSC (12th Grade)</h3>
-      <p className="text-gray-700">
-        Novel International Jr. College<br />
-        Percentage: 75.7%
-      </p>
-    </div>
+            {/* Full Stack Developer */}
+            <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
+              <h1 className="flex items-center text-2xl font-semibold mb-6 text-indigo-600 gap-2">
+                <FaCode /> Full Stack Developer
+              </h1>
+              <p className="text-lg text-gray-600">
+                Competent in frontend (React, Tailwind) and backend (Spring
+                Boot, .NET Core). Experience with APIs, Docker, Kubernetes,
+                Jenkins, GitHub Actions, and MongoDB.
+              </p>
+            </div>
 
-    <div className="relative">
-      <div className="absolute -left-3 w-6 h-6 bg-indigo-600 rounded-full border-4 border-white"></div>
-      <h3 className="text-xl px-4 font-semibold text-indigo-800">2018 - SSC (10th Grade)</h3>
-      <p className="text-gray-700">
-        Blossom Public School, CBSE Board<br />
-        Percentage: 81.7%
-      </p>
-    </div>
-  </div>
-</div>
+            {/* Java Developer */}
+            <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
+              <h1 className="flex items-center text-2xl font-semibold mb-6 text-indigo-600 gap-2">
+                <FaJava /> Java Developer
+              </h1>
+              <p className="text-lg text-gray-600">
+                Strong in Java SE/EE, with hands-on Spring Boot, Hibernate, and
+                Maven. Skilled in IntelliJ, JUnit, JDBC, and JPA for database
+                connectivity.
+              </p>
+            </div>
 
-
-        {/* Skills Highlights */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-          {/* {["DevOps Engineer", "Frontend Developer", "Backend Developer", "Full Stack Developer", "Java Developer", ".NET Developer"].map((role) => ( */}
-          <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
-            <h1 className="text-2xl font-semibold mb-6 text-indigo-600">
-              DevOps Engineer
-            </h1>
-            <p className="text-lg text-gray-600">
-              Proficient in Docker for containerization, Kubernetes for
-              orchestration, Jenkins for CI/CD pipelines, Git for version
-              control, and Helm for managing Kubernetes manifests. Experienced
-              in automating deployments and monitoring using Prometheus and
-              Grafana.
-            </p>
-          </div>
-
-          <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
-            <h1 className="text-2xl font-semibold mb-6 text-indigo-600">
-              Frontend Developer
-            </h1>
-            <p className="text-lg text-gray-600">
-              Skilled in React.js for building dynamic UIs, Tailwind CSS for
-              modern styling, TypeScript for type-safe development, Redux for
-              state management, and REST APIs integration. Familiar with tools
-              like Vite, Webpack, and testing with Jest and React Testing
-              Library.
-            </p>
-          </div>
-
-          <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
-            <h1 className="text-2xl font-semibold mb-6 text-indigo-600">
-              Backend Developer
-            </h1>
-            <p className="text-lg text-gray-600">
-              Experienced with Spring Boot for developing RESTful APIs, MySQL
-              and PostgreSQL for database management, Docker for
-              containerization, and Postman for API testing. Knowledgeable in
-              microservices architecture and secure authentication using JWT and
-              OAuth2.
-            </p>
-          </div>
-
-          <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
-            <h1 className="text-2xl font-semibold mb-6 text-indigo-600">
-              Full Stack Developer
-            </h1>
-            <p className="text-lg text-gray-600">
-              Competent in both frontend (React.js, Tailwind CSS) and backend
-              (Spring Boot, .NET Core), with hands-on experience in integrating
-              APIs, managing databases (MySQL, MongoDB), deploying via Docker &
-              Kubernetes, and setting up CI/CD workflows with Jenkins and GitHub
-              Actions.
-            </p>
-          </div>
-
-          <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
-            <h1 className="text-2xl font-semibold mb-6 text-indigo-600">
-              Java Developer
-            </h1>
-            <p className="text-lg text-gray-600">
-              Strong in Java SE and Java EE, with experience in building
-              enterprise applications using Spring Boot, Hibernate, and Maven.
-              Skilled in using tools like IntelliJ IDEA, JUnit for testing, and
-              integrating databases using JPA and JDBC.
-            </p>
-          </div>
-
-          <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
-            <h1 className="text-2xl font-semibold mb-6 text-indigo-600">
-              .NET Developer
-            </h1>
-            <p className="text-lg text-gray-600">
-              Proficient in C# and .NET Core for building web applications and
-              APIs. Experienced with ASP.NET MVC, Entity Framework for ORM, SQL
-              Server for database operations, and Azure DevOps for CI/CD and
-              deployment. Familiar with Blazor and Windows Forms.
-            </p>{" "}
+            {/* .NET Developer */}
+            <div className="p-6 bg-white rounded-xl shadow-md hover:shadow-xl transition-shadow duration-200">
+              <h1 className="flex items-center text-2xl font-semibold mb-6 text-indigo-600 gap-2">
+                <SiDotnet /> .NET Developer
+              </h1>
+              <p className="text-lg text-gray-600">
+                Proficient in C#, .NET Core, ASP.NET MVC, SQL Server, Entity
+                Framework, Blazor, and Azure DevOps for CI/CD.
+              </p>
+            </div>
           </div>
         </div>
 
         {/* Interests */}
-        <div className="bg-white p-8 shadow-lg mb-16">
-          <h2 className="text-3xl font-semibold text-center">Beyond Coding</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto mt-6">
+        <div className="bg-white rounded-xl shadow-lg hover:shadow-xl hover:border-indigo-500 transition-all duration-200 p-5">
+          <h2 className="text-4xl font-bold text-center mb-6 bg-gradient-to-r from-indigo-700 via-purple-600 to-teal-600 bg-clip-text text-transparent">
+            Beyond Coding
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 text-left max-w-4xl mx-auto">
             <div>
               <h3 className="text-2xl text-indigo-700 font-semibold mb-2">
-                Open Source Contribution
+                🌍 Open Source Contributions
               </h3>
               <p className="text-lg text-gray-800">
                 I actively contribute to open source projects and share my work
@@ -198,21 +215,22 @@ export default function About() {
                 .
               </p>
             </div>
+            <div>
+              <h3 className="text-2xl text-indigo-700 font-semibold mb-2">
+                🎨 Creative & Personal Interests
+              </h3>
+              <ul className="list-disc pl-5 text-lg text-gray-800 space-y-2">
+                <li>
+                  💡 Designing and creating web projects with intuitive UI
+                </li>
+                <li>🖌️ Drawing and painting to express creativity</li>
+                <li>📷 Photography – capturing nature and candid moments</li>
+                <li>📚 Reading books on tech, innovation & personal growth</li>
+                <li>🎶 Listening to instrumental and classical music</li>
+                <li>✈️ Exploring new places & cultures</li>
+              </ul>
+            </div>
           </div>
-        </div>
-
-        {/* call to action */}
-        <div className="bg-gradient-to-r from-indigo-700 via-purple-700 to-teal-700 py-12 px-5 text-white rounded-xl text-center">
-          <h3 className="text-4xl font-semibold mb-5">Continuous Learning</h3>
-          <p className="text-xl mb-5">
-            Eager to expand my skills and stay updated with industry trends.
-          </p>
-          <a
-            href="mailto:shruti.awate666@gmail.com"
-            className="inline-block bg-white text-indigo-800 px-8 py-3 rounded-xl font-semibold hover:opacity-90 transition-colors duration-300"
-          >
-            Get in Touch
-          </a>
         </div>
       </div>
     </div>
